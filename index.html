@@ -1,0 +1,749 @@
+<!-- IMPORTANT -->
+
+<!-- 
+1. SAVE THIS FILE AS: index.html
+
+2. ADD THESE IMAGES IN THE SAME FOLDER:
+mom1.jpg
+mom2.jpg
+mom3.jpg
+mom4.jpg
+mom5.jpg
+
+3. ADD YOUR FINAL IMAGE:
+final-image.jpg
+
+(THIS IMAGE WILL APPEAR WITH THE FINAL MESSAGE)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Mother's Day ❤️</title>
+
+<!-- FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Dancing+Script:wght@700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  overflow:hidden;
+  background:#fff7f5;
+  font-family:'Cormorant Garamond',serif;
+}
+
+/* ======================
+   BACKGROUND
+====================== */
+
+.background{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:
+  radial-gradient(circle at top left, rgba(255,192,203,0.3), transparent 30%),
+  radial-gradient(circle at bottom right, rgba(255,228,225,0.4), transparent 35%);
+  z-index:-2;
+}
+
+/* ======================
+   FLOATING HEARTS
+====================== */
+
+.heart{
+  position:fixed;
+  color:rgba(255,120,150,0.3);
+  animation:floatHeart linear infinite;
+  pointer-events:none;
+}
+
+@keyframes floatHeart{
+
+  from{
+    transform:translateY(100vh);
+    opacity:0;
+  }
+
+  to{
+    transform:translateY(-10vh);
+    opacity:1;
+  }
+
+}
+
+/* ======================
+   INTRO
+====================== */
+
+.intro{
+  width:100%;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  padding:25px;
+  position:relative;
+}
+
+.intro h1{
+  font-family:'Dancing Script',cursive;
+  color:#d96682;
+  font-size:4.5rem;
+  margin-bottom:20px;
+}
+
+.intro p{
+  max-width:700px;
+  color:#5c4a4a;
+  line-height:1.8;
+  font-size:1.3rem;
+  margin-bottom:35px;
+}
+
+.start-btn{
+  padding:16px 40px;
+  border:none;
+  border-radius:50px;
+  background:linear-gradient(135deg,#ff7b98,#ef6a85);
+  color:white;
+  font-size:1rem;
+  cursor:pointer;
+  font-family:'Poppins',sans-serif;
+  box-shadow:0 10px 30px rgba(255,123,152,0.35);
+}
+
+/* DECOR */
+
+.flower{
+  position:absolute;
+  font-size:4rem;
+  opacity:0.15;
+}
+
+.flower1{
+  top:10%;
+  left:8%;
+}
+
+.flower2{
+  bottom:10%;
+  right:8%;
+}
+
+/* ======================
+   MAIN
+====================== */
+
+.main{
+  width:100%;
+  height:100vh;
+  display:none;
+  position:relative;
+  overflow:hidden;
+}
+
+/* ======================
+   COLLAGE
+====================== */
+
+.collage{
+  position:absolute;
+  inset:0;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  padding:15px;
+  overflow:hidden;
+}
+
+/* MEMORY CARD */
+
+.memory{
+  background:white;
+  padding:10px;
+  border-radius:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.12);
+  opacity:0;
+  transform:scale(0.8);
+  overflow:hidden;
+}
+
+.memory img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.caption{
+  margin-top:10px;
+  text-align:center;
+  color:#5b4747;
+  line-height:1.4;
+  font-size:1rem;
+}
+
+.highlight{
+  color:#d96682;
+  font-family:'Dancing Script',cursive;
+  font-size:1.8rem;
+}
+
+/* ======================
+   FOREGROUND BOX
+====================== */
+
+.foreground-box{
+  position:absolute;
+  width:92%;
+  max-width:430px;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(20px);
+  border-radius:28px;
+  padding:25px;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:100;
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* BALLOON */
+
+.balloon{
+  width:110px;
+  height:130px;
+  background:linear-gradient(135deg,#ff7b98,#ef6a85);
+  border-radius:50%;
+  margin:auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:2.4rem;
+  position:relative;
+  cursor:pointer;
+  animation:float 4s ease-in-out infinite;
+}
+
+.balloon::after{
+  content:"";
+  width:2px;
+  height:70px;
+  background:#777;
+  position:absolute;
+  bottom:-70px;
+}
+
+@keyframes float{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-15px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+.tap-text{
+  margin-top:95px;
+  color:#5c4a4a;
+  font-size:1.1rem;
+}
+
+/* POPUP */
+
+.popup{
+  display:none;
+}
+
+.popup img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:18px;
+  margin-bottom:18px;
+}
+
+.popup p{
+  color:#5b4747;
+  line-height:1.7;
+  font-size:1.15rem;
+  margin-bottom:22px;
+}
+
+.next-btn{
+  padding:14px 30px;
+  border:none;
+  border-radius:50px;
+  background:linear-gradient(135deg,#ff7b98,#ef6a85);
+  color:white;
+  font-size:1rem;
+  cursor:pointer;
+}
+
+/* FINAL BUTTON */
+
+.final-btn{
+  display:none;
+}
+
+/* ======================
+   FINAL MESSAGE
+====================== */
+
+.final-message{
+  width:100%;
+  height:100vh;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  padding:25px;
+  overflow-y:auto;
+}
+
+.final-image{
+  width:260px;
+  max-width:90%;
+  border-radius:25px;
+  margin-bottom:30px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+.final-message h2{
+  font-family:'Dancing Script',cursive;
+  color:#d96682;
+  font-size:4rem;
+  margin-bottom:20px;
+}
+
+.final-message p{
+  max-width:750px;
+  color:#5c4a4a;
+  line-height:1.9;
+  font-size:1.3rem;
+}
+
+/* ======================
+   MOBILE
+====================== */
+
+@media(max-width:768px){
+
+  body{
+    overflow:hidden;
+  }
+
+  .intro h1{
+    font-size:3rem;
+  }
+
+  .intro p{
+    font-size:1rem;
+  }
+
+  .flower{
+    font-size:2.5rem;
+  }
+
+  .foreground-box{
+    width:92%;
+    padding:20px;
+  }
+
+  .popup img{
+    height:240px;
+  }
+
+  .popup p{
+    font-size:1rem;
+  }
+
+  .memory{
+    padding:8px;
+  }
+
+  .memory img{
+    height:120px;
+  }
+
+  .caption{
+    font-size:0.8rem;
+  }
+
+  .highlight{
+    font-size:1.3rem;
+  }
+
+  .final-image{
+    width:220px;
+  }
+
+  .final-message h2{
+    font-size:2.8rem;
+  }
+
+  .final-message p{
+    font-size:1rem;
+    line-height:1.8;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<!-- INTRO -->
+
+<div class="intro" id="intro">
+
+  <div class="flower flower1">🌸</div>
+  <div class="flower flower2">💖</div>
+
+  <h1>Happy Mother's Day ❤️</h1>
+
+  <p>
+    Every balloon holds a memory,
+    a little piece of love,
+    and a reminder of how much you mean to me.
+    <br><br>
+    Thank you for always being strong for us,
+    even when life wasn't easy 🌸
+  </p>
+
+  <button class="start-btn" onclick="startExperience()">
+    Start Popping 🎈
+  </button>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main" id="main">
+
+  <!-- COLLAGE -->
+  <div class="collage" id="collage"></div>
+
+  <!-- FOREGROUND BOX -->
+
+  <div class="foreground-box">
+
+    <!-- BALLOON -->
+    <div id="balloonSection">
+
+      <div class="balloon" id="balloon">
+        🎈
+      </div>
+
+      <div class="tap-text">
+        Tap the balloon to reveal a memory ❤️
+      </div>
+
+    </div>
+
+    <!-- POPUP -->
+
+    <div class="popup" id="popup">
+
+      <img id="popupImage">
+
+      <p id="popupText"></p>
+
+      <button class="next-btn" onclick="nextMemory()">
+        Continue ❤️
+      </button>
+
+    </div>
+
+    <!-- FINAL BUTTON -->
+
+    <button class="next-btn final-btn" id="finalBtn" onclick="showFinalMessage()">
+      Open Final Message ❤️
+    </button>
+
+  </div>
+
+</div>
+
+<!-- FINAL MESSAGE -->
+
+<div class="final-message" id="finalMessage">
+
+  <!-- FINAL IMAGE -->
+  <img src="images/final-image.png">
+
+  <h2>
+    Happy Mother's Day Amma ❤️
+  </h2>
+
+  <p>
+    Thank you for being my first teacher,
+    my safest place,
+    my biggest support
+    and the strongest person I know.
+    <br><br>
+    I know I don't always listen,
+    and I know I make mistakes,
+    but thank you for always forgiving me,
+    loving me,
+    and taking care of all of us no matter what.
+    <br><br>
+    I am truly sorry for the times I hurt you,
+    worried you,
+    or didn't understand your love.
+    <br><br>
+    From today,
+    I promise to listen more,
+    understand more,
+    and make you proud ❤️
+  </p>
+
+</div>
+
+<script>
+
+/* ======================
+   MEMORIES
+====================== */
+
+const memories = [
+
+{
+image:"images/mom1.jpeg",
+caption:`
+No matter where life takes us,<br>
+<span class="highlight">your strength</span><br>
+takes us further.
+`
+},
+
+{
+image:"images/mom2.jpeg",
+caption:`
+You take care of everyone and everything with so much love.<br><br>
+<span class="highlight">Thank you</span><br>
+for the endless love, care and sacrifices.
+`
+},
+
+{
+image:"images/mom3.jpeg",
+caption:`
+You forgive me even when I don't listen,
+even when I make the same mistakes again.<br><br>
+<span class="highlight">Your heart is so kind.</span>
+`
+},
+
+{
+image:"images/mom4.jpeg",
+caption:`
+You are <span class="highlight">strong</span><br>
+in ways no one can see.
+`
+},
+
+{
+image:"images/mom5.jpeg",
+caption:`
+I am so <span class="highlight">sorry</span><br>
+for not listening to you.<br><br>
+
+<span class="highlight">I promise</span><br>
+to listen and make you proud ❤️
+`
+}
+
+];
+
+/* ======================
+   VARIABLES
+====================== */
+
+let current = 0;
+
+const collage = document.getElementById("collage");
+const popup = document.getElementById("popup");
+const popupImage = document.getElementById("popupImage");
+const popupText = document.getElementById("popupText");
+
+const balloonSection = document.getElementById("balloonSection");
+const finalBtn = document.getElementById("finalBtn");
+
+/* ======================
+   START
+====================== */
+
+function startExperience(){
+
+  document.getElementById("intro").style.display = "none";
+
+  document.getElementById("main").style.display = "block";
+
+}
+
+/* ======================
+   BALLOON CLICK
+====================== */
+
+document.getElementById("balloon").onclick = function(){
+
+  if(current >= memories.length) return;
+
+  balloonSection.style.display = "none";
+
+  popup.style.display = "block";
+
+  popupImage.src = memories[current].image;
+
+  popupText.innerHTML = memories[current].caption;
+
+  gsap.fromTo(".popup",
+  {
+    opacity:0,
+    scale:0.8
+  },
+  {
+    opacity:1,
+    scale:1,
+    duration:0.6
+  });
+
+}
+
+/* ======================
+   NEXT MEMORY
+====================== */
+
+function nextMemory(){
+
+  createMemory(memories[current]);
+
+  current++;
+
+  popup.style.display = "none";
+
+  if(current < memories.length){
+
+    balloonSection.style.display = "block";
+
+  }
+
+  else{
+
+    finalBtn.style.display = "inline-block";
+
+    gsap.from(finalBtn,{
+      opacity:0,
+      y:20,
+      duration:1
+    });
+
+  }
+
+}
+
+/* ======================
+   CREATE MEMORY
+====================== */
+
+function createMemory(memory){
+
+  const card = document.createElement("div");
+
+  card.classList.add("memory");
+
+  card.innerHTML = `
+
+    <img src="${memory.image}">
+
+    <div class="caption">
+      ${memory.caption}
+    </div>
+
+  `;
+
+  collage.appendChild(card);
+
+  gsap.to(card,{
+    opacity:1,
+    scale:1,
+    duration:0.8
+  });
+
+}
+
+/* ======================
+   FINAL MESSAGE
+====================== */
+
+function showFinalMessage(){
+
+  document.getElementById("main").style.display = "none";
+
+  document.getElementById("finalMessage").style.display = "flex";
+
+  gsap.from("#finalMessage",{
+    opacity:0,
+    duration:1.5
+  });
+
+}
+
+/* ======================
+   FLOATING HEARTS
+====================== */
+
+for(let i=0;i<20;i++){
+
+  const heart = document.createElement("div");
+
+  heart.classList.add("heart");
+
+  heart.innerHTML = "💖";
+
+  heart.style.left = Math.random()*100 + "%";
+
+  heart.style.animationDuration = (5 + Math.random()*5) + "s";
+
+  heart.style.fontSize = (15 + Math.random()*20) + "px";
+
+  document.body.appendChild(heart);
+
+}
+
+</script>
+
+</body>
+</html>
