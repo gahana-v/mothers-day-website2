@@ -1,24 +1,30 @@
-<!-- SAVE AS: index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- MOBILE FIX -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <title>Happy Mother's Day ❤️</title>
 
-<!-- GOOGLE FONTS -->
+<!-- FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Dancing+Script:wght@700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
 <!-- GSAP -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
 <style>
+
+/* ======================
+   GLOBAL
+====================== */
 
 *{
   margin:0;
@@ -28,24 +34,30 @@
 
 html,body{
   width:100%;
-  height:100%;
-  overflow:hidden;
+  min-height:100%;
+  overflow-x:hidden;
+  overflow-y:auto;
   background:#fff7f5;
   font-family:'Cormorant Garamond',serif;
+  -webkit-overflow-scrolling:touch;
 }
 
-/* BACKGROUND */
+/* ======================
+   BACKGROUND
+====================== */
 
 .background{
   position:fixed;
   inset:0;
   background:
-  radial-gradient(circle at top left, rgba(255,192,203,0.3), transparent 30%),
+  radial-gradient(circle at top left, rgba(255,192,203,0.35), transparent 30%),
   radial-gradient(circle at bottom right, rgba(255,228,225,0.4), transparent 35%);
   z-index:-2;
 }
 
-/* HEARTS */
+/* ======================
+   FLOATING HEARTS
+====================== */
 
 .heart{
   position:fixed;
@@ -68,17 +80,19 @@ html,body{
 
 }
 
-/* INTRO */
+/* ======================
+   INTRO
+====================== */
 
 .intro{
   width:100%;
-  height:100vh;
+  min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
   flex-direction:column;
   text-align:center;
-  padding:25px;
+  padding:40px 25px 80px;
   position:relative;
 }
 
@@ -97,6 +111,8 @@ html,body{
   margin-bottom:35px;
 }
 
+/* BUTTON */
+
 .start-btn{
   padding:16px 40px;
   border:none;
@@ -109,6 +125,8 @@ html,body{
   box-shadow:0 10px 30px rgba(255,123,152,0.35);
 }
 
+/* DECOR */
+
 .flower{
   position:absolute;
   font-size:4rem;
@@ -116,26 +134,30 @@ html,body{
 }
 
 .flower1{
-  top:10%;
-  left:8%;
+  top:8%;
+  left:6%;
 }
 
 .flower2{
-  bottom:10%;
-  right:8%;
+  bottom:8%;
+  right:6%;
 }
 
-/* MAIN */
+/* ======================
+   MAIN
+====================== */
 
 .main{
   width:100%;
-  height:100vh;
+  min-height:100vh;
   display:none;
   position:relative;
   overflow:hidden;
 }
 
-/* COLLAGE */
+/* ======================
+   COLLAGE
+====================== */
 
 .collage{
   position:absolute;
@@ -177,7 +199,9 @@ html,body{
   font-size:1.5rem;
 }
 
-/* FOREGROUND */
+/* ======================
+   FOREGROUND BOX
+====================== */
 
 .foreground-box{
   position:absolute;
@@ -195,7 +219,9 @@ html,body{
   box-shadow:0 20px 40px rgba(0,0,0,0.12);
 }
 
-/* BALLOON */
+/* ======================
+   BALLOON
+====================== */
 
 .balloon{
   width:100px;
@@ -243,7 +269,9 @@ html,body{
   font-size:1rem;
 }
 
-/* POPUP */
+/* ======================
+   POPUP
+====================== */
 
 .popup{
   display:none;
@@ -278,7 +306,9 @@ html,body{
   display:none;
 }
 
-/* FINAL MESSAGE */
+/* ======================
+   FINAL MESSAGE
+====================== */
 
 .final-message{
   width:100%;
@@ -288,13 +318,13 @@ html,body{
   align-items:center;
   flex-direction:column;
   text-align:center;
-  padding:25px 18px 40px;
+  padding:30px 20px 60px;
   overflow-y:auto;
 }
 
 .final-image{
-  width:110px;
-  height:110px;
+  width:90px;
+  height:90px;
   object-fit:cover;
   border-radius:50%;
   margin-bottom:15px;
@@ -304,7 +334,7 @@ html,body{
 .final-message h2{
   font-family:'Dancing Script',cursive;
   color:#d96682;
-  font-size:2.3rem;
+  font-size:2.2rem;
   margin-bottom:12px;
   line-height:1.1;
 }
@@ -316,17 +346,32 @@ html,body{
   font-size:0.95rem;
 }
 
-/* MOBILE */
+/* ======================
+   MOBILE
+====================== */
 
 @media(max-width:768px){
 
+  .intro{
+    justify-content:flex-start;
+    padding-top:90px;
+  }
+
   .intro h1{
     font-size:2.7rem;
+    margin-bottom:15px;
   }
 
   .intro p{
     font-size:0.95rem;
     line-height:1.6;
+    margin-bottom:25px;
+  }
+
+  .start-btn{
+    margin-top:10px;
+    padding:14px 28px;
+    font-size:0.95rem;
   }
 
   .flower{
@@ -358,9 +403,14 @@ html,body{
     font-size:1rem;
   }
 
+  .final-message{
+    justify-content:flex-start;
+    padding-top:50px;
+  }
+
   .final-image{
-    width:90px;
-    height:90px;
+    width:80px;
+    height:80px;
   }
 
   .final-message h2{
@@ -395,7 +445,9 @@ html,body{
     Every balloon holds a memory,
     a little piece of love,
     and a reminder of how much you mean to me.
+    
     <br><br>
+
     Thank you for always being strong for us,
     even when life wasn't easy 🌸
   </p>
@@ -411,6 +463,7 @@ html,body{
 <div class="main" id="main">
 
   <!-- COLLAGE -->
+
   <div class="collage" id="collage"></div>
 
   <!-- FOREGROUND BOX -->
@@ -418,6 +471,7 @@ html,body{
   <div class="foreground-box">
 
     <!-- BALLOON -->
+
     <div id="balloonSection">
 
       <div class="balloon" id="balloon">
@@ -469,7 +523,7 @@ html,body{
     my safest place,
     my biggest support
     and the strongest person I know.
-    
+
     <br><br>
 
     I know I don't always listen,
@@ -496,7 +550,9 @@ html,body{
 
 <script>
 
-/* MEMORIES */
+/* ======================
+   MEMORIES
+====================== */
 
 const memories = [
 
@@ -693,4 +749,5 @@ for(let i=0;i<20;i++){
 </script>
 
 </body>
+
 </html>
