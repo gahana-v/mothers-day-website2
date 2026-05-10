@@ -26,29 +26,26 @@
   box-sizing:border-box;
 }
 
-body{
+html,body{
+  width:100%;
+  height:100%;
   overflow:hidden;
   background:#fff7f5;
   font-family:'Cormorant Garamond',serif;
 }
 
-/* ======================
-   BACKGROUND
-====================== */
+/* BACKGROUND */
 
 .background{
   position:fixed;
-  width:100%;
-  height:100%;
+  inset:0;
   background:
   radial-gradient(circle at top left, rgba(255,192,203,0.3), transparent 30%),
   radial-gradient(circle at bottom right, rgba(255,228,225,0.4), transparent 35%);
   z-index:-2;
 }
 
-/* ======================
-   FLOATING HEARTS
-====================== */
+/* HEARTS */
 
 .heart{
   position:fixed;
@@ -71,9 +68,7 @@ body{
 
 }
 
-/* ======================
-   INTRO
-====================== */
+/* INTRO */
 
 .intro{
   width:100%;
@@ -112,11 +107,6 @@ body{
   cursor:pointer;
   font-family:'Poppins',sans-serif;
   box-shadow:0 10px 30px rgba(255,123,152,0.35);
-  transition:0.3s;
-}
-
-.start-btn:hover{
-  transform:scale(1.05);
 }
 
 .flower{
@@ -135,9 +125,7 @@ body{
   right:8%;
 }
 
-/* ======================
-   MAIN
-====================== */
+/* MAIN */
 
 .main{
   width:100%;
@@ -147,24 +135,21 @@ body{
   overflow:hidden;
 }
 
-/* ======================
-   COLLAGE
-====================== */
+/* COLLAGE */
 
 .collage{
   position:absolute;
   inset:0;
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  padding:15px;
-  overflow:hidden;
+  gap:10px;
+  padding:12px;
 }
 
 .memory{
   background:white;
-  padding:10px;
-  border-radius:18px;
+  padding:8px;
+  border-radius:16px;
   box-shadow:0 8px 20px rgba(0,0,0,0.12);
   opacity:0;
   transform:scale(0.8);
@@ -173,59 +158,55 @@ body{
 
 .memory img{
   width:100%;
-  height:180px;
+  height:160px;
   object-fit:cover;
-  border-radius:12px;
+  border-radius:10px;
 }
 
 .caption{
-  margin-top:10px;
+  margin-top:8px;
   text-align:center;
   color:#5b4747;
-  line-height:1.4;
-  font-size:1rem;
+  line-height:1.3;
+  font-size:0.95rem;
 }
 
 .highlight{
   color:#d96682;
   font-family:'Dancing Script',cursive;
-  font-size:1.8rem;
+  font-size:1.5rem;
 }
 
-/* ======================
-   FOREGROUND BOX
-====================== */
+/* FOREGROUND */
 
 .foreground-box{
   position:absolute;
-  width:92%;
-  max-width:430px;
-  background:rgba(255,255,255,0.92);
+  width:90%;
+  max-width:400px;
+  background:rgba(255,255,255,0.95);
   backdrop-filter:blur(20px);
-  border-radius:28px;
-  padding:25px;
+  border-radius:24px;
+  padding:22px;
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
   z-index:100;
   text-align:center;
-  box-shadow:0 20px 50px rgba(0,0,0,0.12);
+  box-shadow:0 20px 40px rgba(0,0,0,0.12);
 }
 
-/* ======================
-   BALLOON
-====================== */
+/* BALLOON */
 
 .balloon{
-  width:110px;
-  height:130px;
+  width:100px;
+  height:120px;
   background:linear-gradient(135deg,#ff7b98,#ef6a85);
   border-radius:50%;
   margin:auto;
   display:flex;
   justify-content:center;
   align-items:center;
-  font-size:2.4rem;
+  font-size:2.2rem;
   position:relative;
   cursor:pointer;
   animation:float 4s ease-in-out infinite;
@@ -234,10 +215,10 @@ body{
 .balloon::after{
   content:"";
   width:2px;
-  height:70px;
+  height:60px;
   background:#777;
   position:absolute;
-  bottom:-70px;
+  bottom:-60px;
 }
 
 @keyframes float{
@@ -247,7 +228,7 @@ body{
   }
 
   50%{
-    transform:translateY(-15px);
+    transform:translateY(-12px);
   }
 
   100%{
@@ -257,14 +238,12 @@ body{
 }
 
 .tap-text{
-  margin-top:95px;
+  margin-top:80px;
   color:#5c4a4a;
-  font-size:1.1rem;
+  font-size:1rem;
 }
 
-/* ======================
-   POPUP
-====================== */
+/* POPUP */
 
 .popup{
   display:none;
@@ -272,26 +251,26 @@ body{
 
 .popup img{
   width:100%;
-  height:300px;
+  height:260px;
   object-fit:cover;
-  border-radius:18px;
-  margin-bottom:18px;
+  border-radius:16px;
+  margin-bottom:15px;
 }
 
 .popup p{
   color:#5b4747;
-  line-height:1.7;
-  font-size:1.15rem;
-  margin-bottom:22px;
+  line-height:1.6;
+  font-size:1rem;
+  margin-bottom:20px;
 }
 
 .next-btn{
-  padding:14px 30px;
+  padding:12px 26px;
   border:none;
   border-radius:50px;
   background:linear-gradient(135deg,#ff7b98,#ef6a85);
   color:white;
-  font-size:1rem;
+  font-size:0.95rem;
   cursor:pointer;
 }
 
@@ -299,9 +278,7 @@ body{
   display:none;
 }
 
-/* ======================
-   FINAL MESSAGE
-====================== */
+/* FINAL MESSAGE */
 
 .final-message{
   width:100%;
@@ -311,61 +288,53 @@ body{
   align-items:center;
   flex-direction:column;
   text-align:center;
-  padding:30px 20px 60px;
+  padding:25px 18px 40px;
   overflow-y:auto;
 }
 
 .final-image{
-
-  width:140px;
-  height:140px;
+  width:110px;
+  height:110px;
   object-fit:cover;
-  border-radius:20px;
+  border-radius:50%;
   margin-bottom:15px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.15);
-
+  box-shadow:0 10px 20px rgba(0,0,0,0.12);
 }
 
 .final-message h2{
   font-family:'Dancing Script',cursive;
   color:#d96682;
-  font-size:4rem;
-  margin-bottom:18px;
+  font-size:2.3rem;
+  margin-bottom:12px;
   line-height:1.1;
 }
 
 .final-message p{
- /* ======================
-   MOBILE
-====================== */
+  max-width:650px;
+  color:#5c4a4a;
+  line-height:1.6;
+  font-size:0.95rem;
+}
+
+/* MOBILE */
 
 @media(max-width:768px){
 
-  body{
-    overflow:hidden;
-  }
-
-  /* INTRO */
-
   .intro h1{
-    font-size:2.5rem;
-    margin-bottom:15px;
+    font-size:2.7rem;
   }
 
   .intro p{
     font-size:0.95rem;
     line-height:1.6;
-    margin-bottom:25px;
   }
 
   .flower{
     font-size:2rem;
   }
 
-  /* FOREGROUND BOX */
-
   .foreground-box{
-    width:90%;
+    width:92%;
     padding:18px;
   }
 
@@ -374,68 +343,37 @@ body{
   }
 
   .popup p{
-    font-size:0.95rem;
-    line-height:1.5;
-  }
-
-  .tap-text{
-    font-size:1rem;
-  }
-
-  /* COLLAGE */
-
-  .collage{
-    gap:8px;
-    padding:10px;
-  }
-
-  .memory{
-    padding:6px;
-    border-radius:12px;
+    font-size:0.92rem;
   }
 
   .memory img{
-    height:100px;
-    border-radius:8px;
+    height:95px;
   }
 
   .caption{
-    font-size:0.72rem;
-    line-height:1.2;
-    margin-top:6px;
+    font-size:0.7rem;
   }
 
   .highlight{
-    font-size:1.1rem;
-  }
-
-  /* FINAL MESSAGE */
-
-  .final-message{
-    justify-content:flex-start;
-    padding:30px 18px 50px;
+    font-size:1rem;
   }
 
   .final-image{
-   
-  width:120px;
-  height:120px;
+    width:90px;
+    height:90px;
   }
 
   .final-message h2{
-    font-size:2rem;
-    line-height:1.1;
-    margin-bottom:12px;
+    font-size:1.9rem;
   }
 
   .final-message p{
-    font-size:0.88rem;
-    line-height:1.55;
-    max-width:100%;
-    padding-bottom:20px;
+    font-size:0.82rem;
+    line-height:1.5;
   }
 
 }
+
 </style>
 
 </head>
@@ -558,9 +496,7 @@ body{
 
 <script>
 
-/* ======================
-   MEMORIES
-====================== */
+/* MEMORIES */
 
 const memories = [
 
@@ -612,9 +548,7 @@ to listen and make you proud ❤️
 
 ];
 
-/* ======================
-   VARIABLES
-====================== */
+/* VARIABLES */
 
 let current = 0;
 
@@ -626,9 +560,7 @@ const popupText = document.getElementById("popupText");
 const balloonSection = document.getElementById("balloonSection");
 const finalBtn = document.getElementById("finalBtn");
 
-/* ======================
-   START
-====================== */
+/* START */
 
 function startExperience(){
 
@@ -638,9 +570,7 @@ function startExperience(){
 
 }
 
-/* ======================
-   BALLOON CLICK
-====================== */
+/* BALLOON CLICK */
 
 document.getElementById("balloon").onclick = function(){
 
@@ -667,9 +597,7 @@ document.getElementById("balloon").onclick = function(){
 
 }
 
-/* ======================
-   NEXT MEMORY
-====================== */
+/* NEXT MEMORY */
 
 function nextMemory(){
 
@@ -699,9 +627,7 @@ function nextMemory(){
 
 }
 
-/* ======================
-   CREATE MEMORY
-====================== */
+/* CREATE MEMORY */
 
 function createMemory(memory){
 
@@ -729,9 +655,7 @@ function createMemory(memory){
 
 }
 
-/* ======================
-   FINAL MESSAGE
-====================== */
+/* FINAL MESSAGE */
 
 function showFinalMessage(){
 
@@ -746,9 +670,7 @@ function showFinalMessage(){
 
 }
 
-/* ======================
-   FLOATING HEARTS
-====================== */
+/* FLOATING HEARTS */
 
 for(let i=0;i<20;i++){
 
