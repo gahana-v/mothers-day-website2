@@ -1,20 +1,4 @@
-<!-- IMPORTANT -->
-
-<!-- 
-1. SAVE THIS FILE AS: index.html
-
-2. ADD THESE IMAGES IN THE SAME FOLDER:
-mom1.jpg
-mom2.jpg
-mom3.jpg
-mom4.jpg
-mom5.jpg
-
-3. ADD YOUR FINAL IMAGE:
-final-image.jpg
-
-(THIS IMAGE WILL APPEAR WITH THE FINAL MESSAGE)
--->
+<!-- SAVE AS: index.html -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,12 +6,12 @@ final-image.jpg
 <head>
 
 <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <title>Happy Mother's Day ❤️</title>
 
-<!-- FONTS -->
+<!-- GOOGLE FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Dancing+Script:wght@700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
@@ -128,9 +112,12 @@ body{
   cursor:pointer;
   font-family:'Poppins',sans-serif;
   box-shadow:0 10px 30px rgba(255,123,152,0.35);
+  transition:0.3s;
 }
 
-/* DECOR */
+.start-btn:hover{
+  transform:scale(1.05);
+}
 
 .flower{
   position:absolute;
@@ -173,8 +160,6 @@ body{
   padding:15px;
   overflow:hidden;
 }
-
-/* MEMORY CARD */
 
 .memory{
   background:white;
@@ -227,7 +212,9 @@ body{
   box-shadow:0 20px 50px rgba(0,0,0,0.12);
 }
 
-/* BALLOON */
+/* ======================
+   BALLOON
+====================== */
 
 .balloon{
   width:110px;
@@ -275,7 +262,9 @@ body{
   font-size:1.1rem;
 }
 
-/* POPUP */
+/* ======================
+   POPUP
+====================== */
 
 .popup{
   display:none;
@@ -306,8 +295,6 @@ body{
   cursor:pointer;
 }
 
-/* FINAL BUTTON */
-
 .final-btn{
   display:none;
 }
@@ -318,36 +305,39 @@ body{
 
 .final-message{
   width:100%;
-  height:100vh;
+  min-height:100vh;
   display:none;
   justify-content:center;
   align-items:center;
   flex-direction:column;
   text-align:center;
-  padding:25px;
+  padding:30px 20px 60px;
   overflow-y:auto;
 }
 
 .final-image{
   width:260px;
-  max-width:90%;
+  max-width:85%;
   border-radius:25px;
-  margin-bottom:30px;
+  margin-bottom:25px;
   box-shadow:0 15px 35px rgba(0,0,0,0.15);
+  object-fit:cover;
 }
 
 .final-message h2{
   font-family:'Dancing Script',cursive;
   color:#d96682;
   font-size:4rem;
-  margin-bottom:20px;
+  margin-bottom:18px;
+  line-height:1.1;
 }
 
 .final-message p{
   max-width:750px;
   color:#5c4a4a;
   line-height:1.9;
-  font-size:1.3rem;
+  font-size:1.25rem;
+  padding-bottom:20px;
 }
 
 /* ======================
@@ -401,17 +391,27 @@ body{
     font-size:1.3rem;
   }
 
+  .final-message{
+    justify-content:flex-start;
+    padding-top:60px;
+    padding-bottom:80px;
+  }
+
   .final-image{
-    width:220px;
+    width:180px;
+    margin-bottom:20px;
   }
 
   .final-message h2{
-    font-size:2.8rem;
+    font-size:2.5rem;
+    margin-bottom:15px;
   }
 
   .final-message p{
-    font-size:1rem;
-    line-height:1.8;
+    font-size:0.98rem;
+    line-height:1.7;
+    width:100%;
+    max-width:95%;
   }
 
 }
@@ -500,8 +500,7 @@ body{
 
 <div class="final-message" id="finalMessage">
 
-  <!-- FINAL IMAGE -->
-  <img src="images/final-image.png">
+  <img src="images/final-image.png" class="final-image">
 
   <h2>
     Happy Mother's Day Amma ❤️
@@ -512,17 +511,23 @@ body{
     my safest place,
     my biggest support
     and the strongest person I know.
+    
     <br><br>
+
     I know I don't always listen,
     and I know I make mistakes,
     but thank you for always forgiving me,
     loving me,
     and taking care of all of us no matter what.
+
     <br><br>
+
     I am truly sorry for the times I hurt you,
     worried you,
     or didn't understand your love.
+
     <br><br>
+
     From today,
     I promise to listen more,
     understand more,
